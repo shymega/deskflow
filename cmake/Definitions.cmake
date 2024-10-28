@@ -54,10 +54,6 @@ endmacro()
 
 macro(configure_meta)
 
-  set(DESKFLOW_HELP_TEXT
-      "Report a bug"
-      CACHE STRING "Text label for the help menu item")
-
   set(DESKFLOW_RES_DIR
       "${PROJECT_SOURCE_DIR}/res"
       CACHE STRING "Resource directory for images, etc")
@@ -70,13 +66,11 @@ macro(configure_meta)
       true
       CACHE BOOL "Show developer thanks message")
 
-  message(VERBOSE "Help text: ${DESKFLOW_HELP_TEXT}")
   message(VERBOSE "Res dir: ${DESKFLOW_RES_DIR}")
   message(VERBOSE "Mac bundle code: ${DESKFLOW_MAC_BUNDLE_CODE}")
   message(VERBOSE "Show dev thanks: ${DESKFLOW_SHOW_DEV_THANKS}")
 
   # TODO: We need to move this to configure_file() in the future, which is much cleaner.
-  add_definitions(-DDESKFLOW_HELP_TEXT="${DESKFLOW_HELP_TEXT}")
   add_definitions(-DDESKFLOW_RES_DIR="${DESKFLOW_RES_DIR}")
 
   if(DESKFLOW_SHOW_DEV_THANKS)
