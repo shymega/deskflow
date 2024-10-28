@@ -16,7 +16,7 @@ macro(configure_packaging)
   set(CPACK_PROJECT_CONFIG_FILE ${CMAKE_CURRENT_BINARY_DIR}/CPackOptions.cmake)
 
   if(${BUILD_INSTALLER})
-    set(CPACK_PACKAGE_NAME ${DESKFLOW_APP_ID})
+    set(CPACK_PACKAGE_NAME ${CMAKE_PROJECT_NAME})
     set(CPACK_PACKAGE_CONTACT ${DESKFLOW_MAINTAINER})
     set(CPACK_PACKAGE_DESCRIPTION ${CMAKE_PROJECT_DESCRIPTION})
     set(CPACK_PACKAGE_VENDOR ${DESKFLOW_AUTHOR_NAME})
@@ -88,9 +88,6 @@ macro(configure_mac_packaging)
 
   configure_files(${DESKFLOW_BUNDLE_SOURCE_DIR} ${DESKFLOW_BUNDLE_DIR})
   set(OS_STRING "macos")
-
-  file(RENAME ${DESKFLOW_BUNDLE_DIR}/Contents/Resources/App.icns
-       ${DESKFLOW_BUNDLE_DIR}/Contents/Resources/${DESKFLOW_APP_NAME}.icns)
 
 endmacro()
 
@@ -185,21 +182,18 @@ macro(configure_linux_packaging)
   # 12), so we must add it manually.
   set(CPACK_DEBIAN_PACKAGE_DEPENDS "qt6-qpa-plugins")
 
-  set(source_desktop_file ${DESKFLOW_PROJECT_RES_DIR}/dist/linux/app.desktop.in)
-  set(configured_desktop_file ${PROJECT_BINARY_DIR}/app.desktop)
-  set(install_desktop_file ${DESKFLOW_APP_ID}.desktop)
+  set(source_desktop_file ${DESKFLOW_PROJECT_RES_DIR}/dist/linux/deskflow.desktop.in)
+  set(configured_desktop_file ${PROJECT_BINARY_DIR}/deskflow.desktop)
 
   configure_file(${source_desktop_file} ${configured_desktop_file} @ONLY)
 
   install(
     FILES ${configured_desktop_file}
-    DESTINATION share/applications
-    RENAME ${install_desktop_file})
+    DESTINATION share/applications)
 
   install(
-    FILES ${DESKFLOW_RES_DIR}/app.png
-    DESTINATION share/pixmaps
-    RENAME ${DESKFLOW_APP_ID}.png)
+    FILES ${DESKFLOW_RES_DIR}/deskflow.png
+    DESTINATION share/pixmaps)
 
   # Prepare PKGBUILD for Arch Linux
   configure_file(${DESKFLOW_PROJECT_RES_DIR}/dist/arch/PKGBUILD.in

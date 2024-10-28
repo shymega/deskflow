@@ -35,7 +35,7 @@
 namespace deskflow::gui {
 
 const ElevateMode kDefaultElevateMode = ElevateMode::kAutomatic;
-const QString kDefaultLogFile = QString("%1.log").arg(DESKFLOW_APP_ID);
+const QString kDefaultLogFile = QStringLiteral("deskflow.log");
 const int kDefaultTlsKeyLength = 2048;
 
 #ifdef DESKFLOW_SHOW_DEV_THANKS

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Include>
-    <?define AppId="@DESKFLOW_APP_ID@"?>
+    <?define AppId="deskflow"?>
     <?define Name="@DESKFLOW_APP_NAME@"?>
     <?define Version="@DESKFLOW_VERSION@"?>
     <?define Author="@DESKFLOW_AUTHOR_NAME@"?>

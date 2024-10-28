@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
 
   QCoreApplication::setApplicationName(kAppName);
   QCoreApplication::setOrganizationName(kAppName);
-  QGuiApplication::setDesktopFileName(DESKFLOW_APP_ID);
+  QGuiApplication::setDesktopFileName("deskflow");
 
   // used as a prefix for settings paths, and must not be a url.
   QCoreApplication::setOrganizationDomain(kOrgDomain);
