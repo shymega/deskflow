@@ -54,15 +54,10 @@ endmacro()
 
 macro(configure_meta)
 
-  set(DESKFLOW_MAC_BUNDLE_CODE
-      "DFLW"
-      CACHE STRING "Mac bundle code (4 characters)")
-
   set(DESKFLOW_SHOW_DEV_THANKS
       true
       CACHE BOOL "Show developer thanks message")
 
-  message(VERBOSE "Mac bundle code: ${DESKFLOW_MAC_BUNDLE_CODE}")
   message(VERBOSE "Show dev thanks: ${DESKFLOW_SHOW_DEV_THANKS}")
 
   if(DESKFLOW_SHOW_DEV_THANKS)
