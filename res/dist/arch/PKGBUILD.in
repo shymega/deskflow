@@ -1,4 +1,4 @@
-# Maintainer: @DESKFLOW_MAINTAINER@
+# Maintainer: Deskflow <maintainers@deskflow.org>
 
 pkgname=deskflow
 pkgver=@DESKFLOW_VERSION@
