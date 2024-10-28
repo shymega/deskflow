@@ -6,7 +6,7 @@
     <?define Author="Deskflow"?>
     <?define BinDir="@CMAKE_RUNTIME_OUTPUT_DIRECTORY@"?>
     <?define ProjectResDir="@DESKFLOW_PROJECT_RES_DIR@"?>
-    <?define ResDir="@DESKFLOW_RES_DIR@"?>
+    <?define ResDir="@CMAKE_SOURCE_DIR@/res"?>
     <?define QtDir="@QT_PATH@"?>
     <?define QtBinDir="$(var.QtDir)\bin"?>
     <?if $(var.Platform) = "x64"?>

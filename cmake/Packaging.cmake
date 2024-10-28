@@ -191,7 +191,7 @@ macro(configure_linux_packaging)
     DESTINATION share/applications)
 
   install(
-    FILES ${DESKFLOW_RES_DIR}/deskflow.png
+    FILES "${PROJECT_SOURCE_DIR}/res/deskflow.png"
     DESTINATION share/pixmaps)
 
   # Prepare PKGBUILD for Arch Linux
