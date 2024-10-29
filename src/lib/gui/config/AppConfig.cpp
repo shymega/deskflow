@@ -35,12 +35,12 @@ const int kWizardVersion = 8;
 static const char *const kLogLevelNames[] = {"INFO", "DEBUG", "DEBUG1", "DEBUG2"};
 
 #if defined(Q_OS_WIN)
-const char AppConfig::m_CoreServerName[] = SERVER_BINARY_NAME ".exe";
+const char AppConfig::m_CoreServerName[] = "deskflow-server.exe";
 const char AppConfig::m_CoreClientName[] = CLIENT_BINARY_NAME ".exe";
 const char AppConfig::m_LogDir[] = "log/";
 const char AppConfig::m_ConfigFilename[] = "deskflow.sgc";
 #else
-const char AppConfig::m_CoreServerName[] = SERVER_BINARY_NAME;
+const char AppConfig::m_CoreServerName[] = "deskflow-server";
 const char AppConfig::m_CoreClientName[] = CLIENT_BINARY_NAME;
 const char AppConfig::m_LogDir[] = "/var/log/";
 const char AppConfig::m_ConfigFilename[] = "deskflow.conf";
