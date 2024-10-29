@@ -181,13 +181,8 @@ macro(configure_linux_packaging)
   # 12), so we must add it manually.
   set(CPACK_DEBIAN_PACKAGE_DEPENDS "qt6-qpa-plugins")
 
-  set(source_desktop_file ${DESKFLOW_PROJECT_RES_DIR}/dist/linux/deskflow.desktop.in)
-  set(configured_desktop_file ${PROJECT_BINARY_DIR}/deskflow.desktop)
-
-  configure_file(${source_desktop_file} ${configured_desktop_file} @ONLY)
-
   install(
-    FILES ${configured_desktop_file}
+    FILES "${DESKFLOW_PROJECT_RES_DIR}/dist/linux/deskflow.desktop"
     DESTINATION share/applications)
 
   install(
