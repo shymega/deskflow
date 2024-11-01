@@ -141,7 +141,7 @@ void ServerApp::help()
 #endif
 
        << HELP_SYS_ARGS HELP_COMMON_ARGS "\n\n"
-       << "Start the " DESKFLOW_APP_NAME " mouse/keyboard sharing server.\n"
+       << "Start the Deskflow mouse/keyboard sharing server.\n"
        << "\n"
        << "  -a, --address <address>  listen for clients on the given address.\n"
        << "  -c, --config <pathname>  use the named configuration file "
@@ -844,7 +844,7 @@ int ServerApp::foregroundStartup(int argc, char **argv)
 const char *ServerApp::daemonName() const
 {
 #if SYSAPI_WIN32
-  return DESKFLOW_APP_NAME " Server";
+  return "Deskflow Server";
 #elif SYSAPI_UNIX
   return SERVER_BINARY_NAME;
 #endif

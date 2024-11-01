@@ -59,7 +59,7 @@ AboutDialog::AboutDialog(QMainWindow *parent, std::shared_ptr<Deps> deps)
   m_pLabelBuildDate->setTextInteractionFlags(Qt::TextSelectableByMouse);
   m_pLabelBuildDate->setText(buildDate.toString(QLocale::system().dateFormat(QLocale::LongFormat)));
 
-  this->setWindowTitle(QString("About %1").arg(DESKFLOW_APP_NAME));
+  this->setWindowTitle(QString("About Deskflow"));
 }
 
 int AboutDialog::exec()
