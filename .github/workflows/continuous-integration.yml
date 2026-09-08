@@ -80,6 +80,10 @@ jobs:
     if: ${{ github.event_name == 'pull_request' }}
     uses: ./.github/workflows/valgrind-analysis.yml
 
+  nix-tests:
+    needs: lint-clang
+    uses: ./.github/workflows/nix-tests.yml
+
   main-build:
     needs: lint-clang
     name: ${{ matrix.target.name }}
